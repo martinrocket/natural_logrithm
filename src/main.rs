@@ -1,7 +1,7 @@
-use std::f64::consts::E;
-
+use clearscreen::clear;
 fn main() {
-    //let x: f128 = std::f128::consts::E;
+    clearscreen::clear().expect("failed to clear screen");
+    println!("\nThis program wil use Eulers Constant and Natural Logrithms");
     let x: f64 = std::f64::consts::E;
-    println!("Hello, world! {}", x);
+    println!("\nEulers constant is {}.\n", x); 
 }
