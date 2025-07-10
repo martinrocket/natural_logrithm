@@ -4,7 +4,7 @@ use clearscreen::clear;
 fn main() {
     clearscreen::clear().expect("failed to clear screen");
 
-    println!("\nThis program wil use Eulers Constant and Natural Logrithms");
+    println!("\nThis program wil use Eulers Number and Natural Logrithms");
 
     let x: f64 = std::f64::consts::E;
     find_euler();
@@ -30,8 +30,8 @@ fn print_ln(x: f64) {
 }
 
 fn find_euler(){
-    println!("\nEulers Constant is (1 + x) raised to the power of 1/x.");
-    println!("Eulers constant calculated by Rust is {}.", std::f64::consts::E);
+    println!("\nEulers Number is (1 + x) raised to the power of 1/x.");
+    println!("Eulers Number calculated by Rust is {}.", std::f64::consts::E);
     // (1 + x) raised to the power of 1/x.  
     let mut x = 1.0;
     let mut y: f64 = 0.0;
@@ -43,7 +43,7 @@ fn find_euler(){
         
         
     }
-    println!("Eulers constant calculated by code is {}.", y);
+    println!("Eulers Number calculated by code is {}.", y);
 
 
 }
