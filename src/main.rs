@@ -1,31 +1,33 @@
 use clearscreen::clear;
 use std::io;
 
+
 fn main() {
+    let mut my_exit = String::from("y");
+    while my_exit.trim() != "e" {
     //clear the console
     clearscreen::clear().expect("failed to clear screen");
-
-    println!("\nThis program wil use Eulers Number and Natural Logrithms");
+    
+        println!("\nThis program wil use Eulers Number and Natural Logrithms");
     
 
     // x is the Rust calculation or Euler's Number
-    let x: f64 = std::f64::consts::E;
+        let x: f64 = std::f64::consts::E;
     
     find_euler();
-    let y: f64 = x.log(x);
-    println!("Example: log(e)e = {}. ln e = {}.\n", y, y);
+        let y: f64 = x.log(x);
+        println!("Example: log(e)e = {}. ln e = {}.\n", y, y);
 
    
-    println!("For the calculation y = ln x, we will solve for y. What is your x?:");
-    let y1: f64 = get_float();
-
-
+        println!("For the calculation y = ln x, we will solve for y. What is your x?:");
+        let y1: f64 = get_float();
   
-    print_ln(y1);
+        print_ln(y1);
+    
+        my_exit = String::from(get_exit());
 
     
-    
-    
+    }
 }
 
 fn print_ln(x: f64) {
@@ -67,4 +69,11 @@ fn get_float() -> f64 {
 fn make_float(x: String) -> f64 {
     let y = x.trim().parse().expect("Failed to parse");
     return y;
+}
+fn get_exit() -> String {
+    let mut my_input = String::new();
+    println!("Type e to exit:");
+    io::stdin().read_line(&mut my_input).expect("failed to read line.");
+    my_input
+
 }
